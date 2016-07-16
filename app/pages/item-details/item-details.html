@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar dark>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="movie-details">
+
+  <ion-card *ngIf="singleMovie">
+    <ion-card-header>
+      <img src="http://image.tmdb.org/t/p/w500{{singleMovie.backdrop_path}}" alt="">
+      <button fab (click)="playTrailer(test)" class="fab">
+            <ion-icon name="play"></ion-icon>
+        </button>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="movie-details">
+        <h1>{{singleMovie.title}}</h1>
+        <span class="tagline">{{singleMovie.tagline}}</span>
+        <p>{{singleMovie.overview}}</p>
+        <br><br>
+        <h1>Trailer</h1>
+        <br>        
+        <iframe #test class="youtube-player" type="text/html" width="640" height="250px" [src]="videoSrc" frameborder="0"> </iframe>
+        <br><br>
+        <h1>Photos</h1>
+        <ion-grid class="gallery">
+          <ion-row>
+            <ion-col width-50 *ngFor="let image of gallery">
+              <img src="http://image.tmdb.org/t/p/w500{{image.file_path}}" alt="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
