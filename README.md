@@ -14,6 +14,7 @@ ionic serve
 ```
 ## Screenshots
 
-![Screenshot](screenshot.png)
 
-![Screenshot](screenshot1.png) 
+Movie list           |  Single movie details
+:-------------------------:|:-------------------------:
+![](screenshot.png)  |  ![](screenshot1.png)
